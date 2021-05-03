@@ -11,9 +11,6 @@ class Nav extends Component {
                     <p className="link"><Link className="link" to='/about'>About</Link></p>
                     <p className="link"><Link className="link" to='/contact'>Contact Us</Link></p>
 
-                    {/* <p className="link"><Link className="link" to='/journals'>Journal Entries</Link></p> */}
-                    {/* <p className="link"><Link className="link" to='/journals/new'>New entry</Link></p> */}
-
 
                 </div>
             </div>

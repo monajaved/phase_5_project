@@ -3,7 +3,7 @@ import { MapContainer, TileLayer, Marker, Popup} from 'react-leaflet'
 import locationData from './LocationData'
 import Button from '@material-ui/core/Button';
 import Form from './Form'
-import ListFiltered from './ListFiltered';
+import List from './List';
 import { Container } from '@material-ui/core';
 
 
@@ -45,7 +45,7 @@ class Home extends Component {
                         <div>
                             <h3 className="dataName">{data.name}</h3>
                             <p className="dataName">{data.info}</p>
-                            <ListFiltered locationId={data.id}/>
+                            <List locationId={data.id}/>
                             <Button variant="outlined" color="primary" size="small" onClick={this.renderForm}>{ this.state.hideButton ? "Hide" : "Show Form" }</Button>
                             {this.state.showForm && (<Form locationId={data.id}/>)}
                         </div>

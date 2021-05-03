@@ -27,7 +27,6 @@ class Journal extends Component {
                             <p>{ date }</p>
                                     
                             <p> { content }</p>   
-                            {/* <button onClick={this.handleDelete }>Delete</button> */}
                             <Button color="secondary" onClick={this.handleDelete }>Delete</Button>
                                     
                         </div>

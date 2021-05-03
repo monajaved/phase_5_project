@@ -1,10 +1,17 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Journal from './Journal'
+import { deleteJournal } from '../actions/getJournals'
+
+
 
 class List extends Component {
+
+
     render() {
-        const journals = this.props.journals.map( (journal, i) => <Journal key={i} title={journal.title} content={journal.content} locationId={journal.locationId}/>)
+        const journals = this.props.journals.map( journal => journal.locationId === this.props.locationId && 
+        <Journal key={journal.id} date={journal.date} content={journal.content} id={journal.id} deleteJournal={this.props.deleteJournal} />)
+
         return (
             <div>
                 {journals}
@@ -21,4 +28,6 @@ const mapStateToProps = state => {
 
 }
 
-export default connect(mapStateToProps)(List)
+
+
+export default connect(mapStateToProps, {deleteJournal})(List)
