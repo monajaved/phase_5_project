@@ -1,38 +1,109 @@
-.App {
-  text-align: center;
+
+body {
+  margin: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.nav {
+background: #F8F8F8;
+min-height: 10px;
+margin: 0;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.title {
+font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+font-weight: 400;
+color: #075e24;
+font-size: 3rem;
+font-weight: 600;
+margin: 1em;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.link {
+text-decoration: none;
+text-transform: uppercase;
+color: #717171;
+font-weight: 800;
+font-family: 'Ubuntu', sans-serif;
+font-size: 1.25rem;
+margin: 0.75em;
+text-decoration: none;
+
+}
+
+.links {
+display: flex;
+flex-direction: column;
+flex-wrap: wrap;
+width: 60%;
+margin: 1em;
+justify-content: space-between;
+align-items: center;
+text-decoration: none;
+}
+
+@media (min-width: 1000px) {
+.nav {
+   flex-direction: row;
+   justify-content: space-between;
+} 
+
+.links {
+   flex-direction: row;
+}
+}
+
+.leaflet-container {
+  width: 85vw;
+  height: 85vh;
+}
+
+
+.footer {
+background: #F8F8F8;
+min-height: 80px;
+margin-right: 0;
+padding-right: 50px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: flex-end;
+/* position: fixed; */
+left: 0;
+bottom: 0;
+width: 100%;
+text-align: center;
+  
+}
+
+.map {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin: 10px
 }
 
-.App-link {
-  color: #61dafb;
+.card {
+  color: #807676;
+  padding: 0.5em;
+
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.description {
+  color: #859c8c;
+  font-size: 28px;
+  text-align: center;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.dataName {
+  color: #393b3a;
+  font-family:'Courier New', Courier, monospace
+}
+
+.formCreate {
+  color: #626664;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  text-decoration:dashed;
 }

@@ -1,20 +1,39 @@
 import React, { Component } from 'react'
+import Grid from '@material-ui/core/Grid'
+import Paper from '@material-ui/core/Paper'
+import Button from '@material-ui/core/Button';
+
 
 class Journal extends Component {
+
+    
+    handleDelete = () => {
+        this.props.deleteJournal(this.props)
+      
+    }
+
+
     render() {
-        const { title, content } = this.props;
+        const { id, date, content } = this.props;
+
+      
+
         return (
-            <div>
-                <ul>
+            <Grid container spacing={0}>
+                <Grid item xs={9}>
+                    <Paper elevation ={5}>
 
-                    <li>
-                        <h3>{ title } </h3>
-                        <p> { content }</p>
-
-                    </li>
-                </ul>
-                
-            </div>
+                        <div  className="card">
+                            <p>{ date }</p>
+                                    
+                            <p> { content }</p>   
+                            {/* <button onClick={this.handleDelete }>Delete</button> */}
+                            <Button color="secondary" onClick={this.handleDelete }>Delete</Button>
+                                    
+                        </div>
+                    </Paper>
+                </Grid>
+            </Grid>
         )
     }
 }

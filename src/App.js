@@ -1,6 +1,5 @@
 
 import React, { Component } from 'react'
-import { connect } from 'react-redux';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { getJournals } from './actions/getJournals'
 import Nav from './components/Nav'
@@ -8,16 +7,17 @@ import Footer from './components/Footer'
 import Home from './components/Home'
 import ErrorPage from './components/Error'
 import About from './components/About'
-import List from './components/List'
-import Form from './components/Form'
+import Contact from './components/Contact'
+import { connect } from 'react-redux';
+import './App.css';
 
-// import './App.css';
 
 class App extends Component {
 
   componentDidMount (){
     this.props.getJournals();
   }
+
   render (){
     if (this.props.loading) {
       return (
@@ -32,11 +32,7 @@ class App extends Component {
         <Switch>
           <Route exact path="/" component= {Home} />
           <Route exact path="/about" component={About} />
-          <Route exact path="/journals" component={List} />
-          <Route exact path="/journals/new" component={Form} />
-
-
-
+          <Route exact path="/contact" component={Contact} />
           <Route component={ErrorPage}/>
 
         </Switch>

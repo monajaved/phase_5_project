@@ -4,7 +4,7 @@ import Journal from './Journal'
 
 class List extends Component {
     render() {
-        const journals = this.props.journals.map( (journal, i) => <Journal key={i} title={journal.title} content={journal.content}/>)
+        const journals = this.props.journals.map( (journal, i) => <Journal key={i} title={journal.title} content={journal.content} locationId={journal.locationId}/>)
         return (
             <div>
                 {journals}

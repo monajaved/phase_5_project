@@ -4,15 +4,18 @@ import { Link } from 'react-router-dom'
 class Nav extends Component {
     render() {
         return (
-            <div>
-                <ul>
-                    <li><Link to='/'>Home</Link></li>
-                    <li><Link to='/about'>About</Link></li>
-                    <li><Link to='/journals'>Journal Entries</Link></li>
-                    <li><Link to='/journals/new'>New entry</Link></li>
+            <div className="nav">
+                <h1 className="title">Travel Journal</h1>
+                <div className="links">
+                    <p className="link"><Link className="link" to='/'>Home</Link></p>
+                    <p className="link"><Link className="link" to='/about'>About</Link></p>
+                    <p className="link"><Link className="link" to='/contact'>Contact Us</Link></p>
+
+                    {/* <p className="link"><Link className="link" to='/journals'>Journal Entries</Link></p> */}
+                    {/* <p className="link"><Link className="link" to='/journals/new'>New entry</Link></p> */}
 
 
-                </ul>
+                </div>
             </div>
         )
     }

@@ -8,7 +8,7 @@ export const getJournals = () => {
     }
 }
 
-export const addJournal = (journal, history) => {
+export const addJournal = (journal) => {
     return dispatch => {
         fetch('http://localhost:3001/journals', {
             method: "POST",
@@ -21,9 +21,21 @@ export const addJournal = (journal, history) => {
         .then(resp => resp.json())
         .then(journal => {
             dispatch({type: "ADD_JOURNAL", journal })
-            history.push("/journals")
         })
-
-
     }
 }
+
+
+export const deleteJournal = (journal) => {
+    return dispatch => {
+        fetch(`http://localhost:3001/journals/${journal.id}` , {
+            method: "DELETE" })
+            .then(resp => resp.json())
+            .then(journal => { dispatch({ type: "DELETE_JOURNAL", journal }) })
+            // debugger;
+            .catch(error => console.log(error))
+    }
+
+}
+
+

@@ -21,6 +21,13 @@ const journalsReducer = (state=initialState, action) => {
                 ...state,
                 journals: [...state.journals, action.journal],
             }
+        case 'DELETE_JOURNAL':
+            return { 
+                ...state, 
+                journals: state.journals.filter(journal => journal.id !== action.journal.id)
+            }
+            
+
         default: 
         return state;
     }
